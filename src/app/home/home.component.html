@@ -1,0 +1,24 @@
+<nav class="navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">WebSiteName</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="#">Menu1</a></li>
+            <li class="active"><a href="#">Menu2</a></li>
+            <li><a href="#">Menu3</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Loged in as: <strong>{{currentUserId.email}}</strong></a></li>
+            <li><a (click)="logout()" href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container" >
+    <div class="content">
+        <span>Congratulations, you have successfully logged in!!</span>
+        <br />
+        <a (click)="logout()" href="#">Click Here to logout</a>
+    </div>
+</div>

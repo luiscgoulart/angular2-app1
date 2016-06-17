@@ -1,0 +1,26 @@
+
+
+<div class="container">
+
+    <h1>App Name</h1>
+
+    <div class="login-box">
+        <form class="form-signin">
+            <h2 class="form-signin-heading">Please sign in</h2>
+            <label for="emailField" class="sr-only">Email address</label>
+            <input type="email" id="emailField" class="form-control" placeholder="Enter email" [(ngModel)]="user.email" required autofocus>
+            <label for="passwordField" class="sr-only">Password</label>
+            <input type="password" id="passwordField" class="form-control" placeholder="Enter password" [(ngModel)]="user.password" required>
+            <!--div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+            </div-->
+            <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="login()">Sign in</button>
+            <span>{{errorMsg}}</span>
+        </form>
+    </div>
+
+</div>
+
+ 
