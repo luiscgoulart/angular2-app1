@@ -1,11 +1,13 @@
 import {Component} from 'angular2/core';
 import {LoginService} from '../login/login.service';
 import {User} from '../login/user';
+import {EntityListComponent} from './entity-list.component';
  
 @Component({
     selector: 'login-form',
     providers: [LoginService],
-    template: require('./home.component.html')
+    template: require('./home.component.html'),
+    directives: [EntityListComponent]
 })
  
 export class HomeComponent {
