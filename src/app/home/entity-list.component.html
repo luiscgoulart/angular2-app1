@@ -9,9 +9,6 @@
         <li><a href="#section3">Photos</a></li>
       </ul><br>
       <div class="input-group">
-      
-        
-        
         <input type="text" class="form-control" placeholder="Search Blog..">
         <span class="input-group-btn">
           <button class="btn btn-default" type="button">
@@ -23,9 +20,20 @@
 <!-- -- -- -- -->
     <div class="col-sm-9">
         <div class="panel panel-default">
-            <div class="panel-heading">User information</div>
-
-            <table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="10">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col-sm-9">
+                  <h3>Entity List</h3>
+                </div>
+                <div class="col-sm-3">
+                  <a href="#" role="button" tooltip="Export" tooltipPlacement="top" class="btn btn-large btn-link pull-right">
+                    <span class="glyphicon glyphicon-export"></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!--div class="table-responsive"-->
+                <table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
                 <thead>
                 <tr>
                     <th style="width: 10%"></th>
@@ -47,14 +55,20 @@
                 <tbody>
                 <tr *ngFor="let item of mf.data">
                     <td>
-                      <button class="btn btn-danger" title="remove" (click)="removeItem(item)">
+                      <!--button class="btn btn-danger" title="remove" (click)="removeItem(item)">
                         <span class="glyphicon glyphicon-remove"></span>
-                      </button>
+                      </button-->
+                      <input type="checkbox" value="">
                     </td>
                     <td>{{item.fieldA}}</td>
                     <td>{{item.fieldB}}</td>
                     <td>{{item.fieldC}}</td>
                     <td>{{item.fieldD}}</td>
+                    <td>
+                      <a href="#" role="button" class="btn btn-default" tooltip="View detail" tooltipPlacement="bottom">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                      </a>
+                    </td>
                 </tr>
                 </tbody>
                 <tfoot>
@@ -62,9 +76,11 @@
                     <td colspan="5">
                         <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]"></mfBootstrapPaginator>
                     </td>
+                    <td>Total records: {{data.length}}</td>
                 </tr>
                 </tfoot>
             </table>
+          <!--/div-->
         </div>
     </div>
   </div>
