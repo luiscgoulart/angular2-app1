@@ -8,8 +8,11 @@ import { AppState } from './app.service';
 import { HomeComponent } from './home';
 import { RouterActive } from './router-active';
 
-import {LoginComponent} from './login/login.component';
+import {HomeRoutes} from './home/home.routes';
 
+import {LoginComponent} from './login/login.component';
+import {EntityListComponent} from './home/entity-list.component';
+import {EntityDetailComponent} from './home/entity-detail.component';
 /*
  * App Component
  * Top Level Component
@@ -29,6 +32,8 @@ import {LoginComponent} from './login/login.component';
 @RouteConfig([
   { path: '/login', name: 'Login', component: LoginComponent, useAsDefault: true },
   { path: '/home',  name: 'Home',  component: HomeComponent },
+  { path: '/home/entity-list', name: 'EntityList', component: EntityListComponent },
+  { path: '/home/entity-detail', name: 'EntityDetail', component: EntityDetailComponent }
   // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
   //{ path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About') }
 ])

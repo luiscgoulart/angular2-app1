@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {DatePipe} from "@angular/common";
 import {DataTableDirectives} from 'angular2-datatable/datatable';
 //import {HTTP_PROVIDERS, Http, Response} from "@angular/http";
+import { Router } from '@angular/router-deprecated';
 import * as _ from 'lodash';
 import { TOOLTIP_DIRECTIVES } from 'ng2-bootstrap/ng2-bootstrap';
 import {EntityListService} from './entity-list.service';
@@ -20,7 +21,7 @@ export class EntityListComponent implements OnInit{
     private data: any;
     private dataLength: number;
 
-    constructor(private entityListService: EntityListService) {
+    constructor(private router: Router, private entityListService: EntityListService) {
     }
 
     public ngOnInit() {
