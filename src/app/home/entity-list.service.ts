@@ -10,7 +10,8 @@ export class EntityListService {
 
   public getData(){
     return this.http.get("app/home/table-data.json")
-    .map(this.extractData);
+    .map(res => res.json());
+    //.map(this.extractData);
   }
 
   private extractData(res: Response) {

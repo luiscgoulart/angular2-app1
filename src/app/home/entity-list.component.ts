@@ -18,7 +18,7 @@ import {EntityListService} from './entity-list.service';
 export class EntityListComponent implements OnInit{
 
     private data: any;
-    dataLength: number;
+    private dataLength: number;
 
     constructor(private entityListService: EntityListService) {
     }
@@ -31,7 +31,7 @@ export class EntityListComponent implements OnInit{
     public getData() {
       this.entityListService.getData().subscribe(
         (data) => {
-          //console.log(data.length),
+          console.log(data.length),
           this.getLength(data),
           this.data = data
         },
@@ -42,7 +42,8 @@ export class EntityListComponent implements OnInit{
 
     private getLength(param: any) {
       console.log("getLenght() :" + param.length);
-      dataLength => this.dataLength = param.length;
+      //console.log(Typeof(param.length));
+      this.dataLength = param.length;
     }
 
     private sortByWordLength = (a:any) => {
