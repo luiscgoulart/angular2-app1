@@ -30,7 +30,7 @@ import {LoginComponent} from './login/login.component';
   { path: '/login', name: 'Login', component: LoginComponent, useAsDefault: true },
   { path: '/home',  name: 'Home',  component: HomeComponent },
   // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
-  { path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About') }
+  //{ path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About') }
 ])
 
 export class App {
