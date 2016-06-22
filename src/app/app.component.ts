@@ -2,7 +2,8 @@
  * Angular 2 decorators and services
  */
 import { Component, ViewEncapsulation } from '@angular/core';
-import { RouteConfig, Router } from '@angular/router-deprecated';
+import { RouteConfig, Router, RouterOutlet } from '@angular/router-deprecated';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import { AppState } from './app.service';
 import { HomeComponent } from './home';
@@ -21,14 +22,14 @@ import {EntityDetailComponent} from './home/entity-detail.component';
   selector: 'app',
   pipes: [ ],
   providers: [ ],
-  directives: [ RouterActive ],
+  directives: [ RouterActive, ROUTER_DIRECTIVES],
   encapsulation: ViewEncapsulation.None,
   styles: [
     require('./app.css')
   ],
   template: require('./app.component.html')
 })
-
+/*
 @RouteConfig([
   { path: '/login', name: 'Login', component: LoginComponent, useAsDefault: true },
   { path: '/home',  name: 'Home',  component: HomeComponent },
@@ -37,7 +38,7 @@ import {EntityDetailComponent} from './home/entity-detail.component';
   // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
   //{ path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About') }
 ])
-
+*/
 export class App {
   angularclassLogo = 'assets/img/angularclass-avatar.png';
   loading = false;

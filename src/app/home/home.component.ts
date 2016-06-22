@@ -3,7 +3,7 @@ import {LoginService} from '../login/login.service';
 import {User} from '../login/user';
 import {EntityListComponent} from './entity-list.component';
 import {EntityDetailComponent} from './entity-detail.component';
-import { RouteConfig, Router } from '@angular/router-deprecated';
+import { RouteConfig, Router, RouterOutlet } from '@angular/router-deprecated';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
@@ -18,12 +18,12 @@ export class HomeComponent {
     currentUserId: User = JSON.parse(localStorage.getItem("user"));
 
     constructor(
-        private router: Router,
+        //private router: Router,
         private _service:LoginService){}
 
     ngOnInit(){
         this._service.checkCredentials();
-        console.log(this.currentUserId.email);
+        //console.log(this.currentUserId.email);
     }
 
     logout() {
