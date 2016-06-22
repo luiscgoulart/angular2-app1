@@ -8,13 +8,14 @@ import { bootstrap } from '@angular/platform-browser-dynamic';
 */
 import { PLATFORM_PROVIDERS } from './platform/browser';
 import { ENV_PROVIDERS } from './platform/environment';
+import {ROUTER_PROVIDERS} from '@angular/router-deprecated';
 
 /*
 * App Component
 * our top level component that holds all of our components
 */
 import { App, APP_PROVIDERS } from './app';
-import { APP_ROUTER_PROVIDERS } from './app/app.routes';
+//import { APP_ROUTER_PROVIDERS } from './app/app.routes';
 
 /*
  * Bootstrap our Angular app with a top level component `App` and inject
@@ -26,7 +27,8 @@ export function main(initialHmrState?: any): Promise<any> {
     ...PLATFORM_PROVIDERS,
     ...ENV_PROVIDERS,
     ...APP_PROVIDERS,
-    APP_ROUTER_PROVIDERS
+    ROUTER_PROVIDERS/*,
+    APP_ROUTER_PROVIDERS*/
   ])
   .catch(err => console.error(err));
 

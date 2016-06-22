@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import {DatePipe} from "@angular/common";
 import {DataTableDirectives} from 'angular2-datatable/datatable';
 //import {HTTP_PROVIDERS, Http, Response} from "@angular/http";
-import { Router } from '@angular/router-deprecated';
+import { ActivatedRoute, Router } from '@angular/router';
 import * as _ from 'lodash';
 import { TOOLTIP_DIRECTIVES } from 'ng2-bootstrap/ng2-bootstrap';
 import {EntityListService} from './entity-list.service';
 
 @Component({
-    selector: 'entity-list',
+    //selector: 'entity-list',
     template: require('./entity-list.component.html'),
     providers: [EntityListService],
     directives: [DataTableDirectives, TOOLTIP_DIRECTIVES],
